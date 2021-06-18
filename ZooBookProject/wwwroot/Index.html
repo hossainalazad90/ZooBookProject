@@ -1,55 +1,67 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>To-do CRUD</title>    
+
+    <title>To-do CRUD</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/site.css" />
-
-
 </head>
-<body>
-    <h1>To-do CRUD</h1>
-    <h3>Add</h3>
-    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
-        <input type="text" id="add-firstName" placeholder="First Name">
-        <input type="text" id="add-middleName" placeholder="Middle Name">
-        <input type="text" id="add-lastName" placeholder="Last Name">
-        <input type="submit" class="btn btn-primary" value="Add">
-    </form>
-
-    <div id="editForm">
-        <h3>Edit</h3>
-        <form action="javascript:void(0);" onsubmit="updateItem()">
-            <input type="hidden" id="edit-id">
-            <input type="text" id="edit-firstName">
-            <input type="text" id="edit-middleName">
-            <input type="text" id="edit-lastName">
-            <input type="submit" value="Save">
-            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
-        </form>
+<body >
+    <div class="header">
+        <h1>Employee CRUD</h1>
     </div>
+    <div class="container" style="height:525px;margin-top:20px">
+        <h3>Add</h3>
+        <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+            
+                <input type="text" id="add-firstName" class="col-md-3" placeholder="First Name">
+                <input type="text" id="add-middleName" class="col-md-3" placeholder="Middle Name">
+                <input type="text" id="add-lastName" class="col-md-3" placeholder="Last Name">
+                <input type="submit" style="width:100px" class=" btn btn-primary btn-sm" value="Add">
+        </form>
 
-    <p id="counter"></p>
+        <div id="editForm">
+            <h3>Edit</h3>
+            <form action="javascript:void(0);" onsubmit="updateItem()">                
+                    <input type="hidden" id="edit-id">
+                    <input type="text" id="edit-firstName" class="col-md-3">
+                    <input type="text" id="edit-middleName" class="col-md-3">
+                    <input type="text" id="edit-lastName" class="col-md-3">
+                    <input type="submit" style="width:100px" class="btn btn-success btn-sm" value="Update">
+                <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+            </form>
+        </div>
+        <br />
+        <p id="counter"></p>
+        <table class="table table-bordered">
+            <tr>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tbody id="employees">
+            </tbody>
+        </table>
+    </div>   
 
-    <table>
-        <tr>            
-            <th>First Name</th>
-            <th>Middle Name</th>
-            <th>Last Name</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        <tbody id="employees">
+    
 
-        </tbody>
-    </table>
+    <footer>
+        &copy; ZooBook-
+        <script>document.write(new Date().getFullYear())</script>
+    </footer>
 
-    <script src="js/site.js" asp-append-version="true"></script>
-    <script type="text/javascript">
-        getEmployees();
-    </script>
 </body>
-</html>
-<script>
 
+
+
+</html>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/site.js" asp-append-version="true"></script>
+<script type="text/javascript">
+    getEmployees();
 </script>

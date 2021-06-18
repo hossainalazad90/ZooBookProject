@@ -121,8 +121,7 @@ function _displayItems(data) {
 
         let td3 = tr.insertCell(2);
         let textNode3 = document.createTextNode(emp.lastName);
-        td3.appendChild(textNode3);
-
+        td3.appendChild(textNode3);        
         let td4 = tr.insertCell(3);
         td4.appendChild(editButton);
 
